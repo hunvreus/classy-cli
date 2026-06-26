@@ -1,6 +1,9 @@
-# Classy agent
+---
+name: classy-agent
+description: Use when invited to collaborate in Classy with an agent bearer token, or when asked to read, edit, comment on, or signal presence in a Classy note as an agent. Provides the safe workflow for using the classy-agent CLI, reading snapshots before edits, applying block-ref edits, retrying stale edits, and falling back to the raw Classy Agent API.
+---
 
-Use this skill when you are invited to collaborate in Classy with an agent bearer token, or when the user asks you to read, edit, comment on, or signal presence in a Classy note as an agent.
+# Classy agent
 
 ## Rules
 

@@ -81,3 +81,9 @@ skills/classy-agent/SKILL.md
 ```
 
 It tells agents to prefer this CLI, read snapshots before edits, use stable block refs, and fall back to raw HTTP only when needed.
+
+For skill registries, publish or reference the skill folder:
+
+```text
+skills/classy-agent
+```

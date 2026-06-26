@@ -3,6 +3,22 @@
   "version": "0.1.0",
   "description": "CLI and Codex skill for Classy agent collaboration",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hunvreus/classy-cli.git"
+  },
+  "homepage": "https://github.com/hunvreus/classy-cli#readme",
+  "bugs": {
+    "url": "https://github.com/hunvreus/classy-cli/issues"
+  },
+  "keywords": [
+    "classy",
+    "agent",
+    "cli",
+    "codex",
+    "skill",
+    "agent-skills"
+  ],
   "bin": {
     "classy-agent": "./cli/classy-agent.mjs"
   },

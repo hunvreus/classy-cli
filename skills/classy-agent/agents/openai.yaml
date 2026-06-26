@@ -1,0 +1,7 @@
+interface:
+  display_name: "Classy Agent"
+  short_description: "Edit Classy notes as an agent"
+  default_prompt: "Use $classy-agent to read and safely edit the Classy note from my agent invite."
+
+policy:
+  allow_implicit_invocation: true
