@@ -1,8 +1,7 @@
 #!/usr/bin/env node
 
-import { readFileSync } from 'node:fs'
-import { basename } from 'node:path'
-import { fileURLToPath } from 'node:url'
+import { readFileSync, realpathSync } from 'node:fs'
+import { fileURLToPath, pathToFileURL } from 'node:url'
 
 const DEFAULT_BASE_URL = 'http://localhost:3000'
 const DEFAULT_INSTANCE_ID = `classy-agent-${process.pid}`
@@ -315,7 +314,7 @@ function jsonResult(value) {
   return { status: 0, output: `${JSON.stringify(value, null, 2)}\n` }
 }
 
-const isMain = process.argv[1] && basename(fileURLToPath(import.meta.url)) === basename(process.argv[1])
+const isMain = process.argv[1] && pathToFileURL(realpathSync(process.argv[1])).href === import.meta.url
 if (isMain) {
   run(process.argv.slice(2))
     .then((result) => {

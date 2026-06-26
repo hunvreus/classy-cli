@@ -1,5 +1,8 @@
 import assert from 'node:assert/strict'
 import { execFile } from 'node:child_process'
+import { mkdtemp, symlink } from 'node:fs/promises'
+import { tmpdir } from 'node:os'
+import { join } from 'node:path'
 import { test } from 'node:test'
 import { promisify } from 'node:util'
 
@@ -12,6 +15,16 @@ test('prints command help', async () => {
   assert.match(stdout, /Classy agent CLI/)
   assert.match(stdout, /replace-block/)
   assert.match(stdout, /CLASSY_AGENT_TOKEN/)
+})
+
+test('runs through an installed bin symlink', async () => {
+  const dir = await mkdtemp(join(tmpdir(), 'classy-agent-test-'))
+  const binPath = join(dir, 'classy-agent')
+  await symlink(cliPath.pathname, binPath)
+
+  const { stdout } = await execFileAsync(binPath, ['help'])
+
+  assert.match(stdout, /Classy agent CLI/)
 })
 
 test('fails before network requests when the token is missing', async () => {
