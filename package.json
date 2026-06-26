@@ -1,0 +1,21 @@
+{
+  "name": "classy-cli",
+  "version": "0.1.0",
+  "description": "CLI and Codex skill for Classy agent collaboration",
+  "type": "module",
+  "bin": {
+    "classy-agent": "./cli/classy-agent.mjs"
+  },
+  "files": [
+    "cli",
+    "skills",
+    "README.md"
+  ],
+  "scripts": {
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "license": "MIT"
+}
